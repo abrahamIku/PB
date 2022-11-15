@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      # - main # or the name of your main branch
+      - main # or the name of your main branch
 jobs:
   build:
     name: Build
@@ -12,7 +12,6 @@ jobs:
         with:
           fetch-depth: 0
       - uses: sonarsource/sonarqube-scan-action@master
-      # - uses: sonarsource/sonarqube-scan-action@main
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
